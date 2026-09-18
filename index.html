@@ -6,170 +6,171 @@
 <title>Iwan Herdian — Resume</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink:     #111827;
-    --navy:    #0D2B45;
-    --teal:    #14616E;
-    --gold:    #B8892A;
-    --gold-lt: #F5E8C8;
-    --stone:   #F3F0EB;
-    --rule:    #D4C9B5;
-    --muted:   #6B7280;
-    --white:   #FFFFFF;
-  }
+:root {
+  --ink: #111827;
+  --navy: #0D2B45;
+  --teal: #14616E;
+  --gold: #B8892A;
+  --gold-lt: #F5E8C8;
+  --stone: #F3F0EB;
+  --rule: #D4C9B5;
+  --muted: #6B7280;
+  --white: #FFFFFF;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: #CCC8C0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px 60px;
+}
+.page {
+  width: 794px;
+  background: var(--white);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22), 0 4px 12px rgba(0,0,0,0.1);
+  animation: rise .6s ease both;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+/* HEADER */
+.header {
+  background: var(--navy);
+  padding: 28px 40px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+}
+.header::before, .header::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(184,137,42,0.2);
+}
+.header::before { width: 260px; height: 260px; top: -100px; right: -60px; }
+.header::after  { width: 140px; height: 140px; bottom: -60px; right: 120px; border-width: 2px; border-color: rgba(184,137,42,0.12); }
 
-  body {
-    font-family: 'Jost', sans-serif;
-    background: #CCC8C0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 20px 60px;
-  }
+.h-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 700;
+  color: var(--white); letter-spacing: -0.5px; line-height: 1;
+  position: relative; z-index: 1;
+}
+.h-ace-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(184,137,42,0.18); border: 1px solid rgba(184,137,42,0.4);
+  border-radius: 3px; padding: 2px 8px; margin-left: 10px;
+  font-size: 9px; font-weight: 600; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--gold-lt); vertical-align: middle;
+}
+.h-title {
+  font-size: 11px; font-weight: 500; letter-spacing: 2.2px;
+  text-transform: uppercase; color: var(--gold-lt);
+  margin-top: 8px; position: relative; z-index: 1;
+}
+.h-tags {
+  font-size: 10px; font-weight: 300;
+  color: rgba(255,255,255,0.42);
+  margin-top: 7px; letter-spacing: 0.3px;
+  position: relative; z-index: 1;
+}
+.h-contact {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 4px;
+  position: relative; z-index: 1;
+  margin-top: 4px;
+}
+.h-contact div {
+  font-size: 10.5px; color: rgba(255,255,255,0.7);
+  display: flex; align-items: center; gap: 6px;
+}
+.ico { color: var(--gold); font-size: 10px; width: 13px; text-align: center; }
+.notice { margin-top: 4px; }
+.notice div {
+  font-size: 9.5px; font-weight: 600;
+  color: var(--gold-lt); letter-spacing: 0.5px;
+}
+.g-rule { height: 3px; background: linear-gradient(90deg, var(--gold), #E8C05A 55%, var(--gold)); }
 
-  .page {
-    width: 794px;
-    background: var(--white);
-    box-shadow: 0 24px 80px rgba(0,0,0,0.22), 0 4px 12px rgba(0,0,0,0.1);
-    animation: rise .6s ease both;
-  }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+/* STATS */
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--rule); }
+.stat { padding: 13px 0; text-align: center; border-right: 1px solid var(--rule); }
+.stat:last-child { border-right: none; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1; }
+.stat-label { font-size: 8.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
 
-  /* HEADER */
-  .header {
-    background: var(--navy);
-    padding: 32px 40px 26px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
-    align-items: end;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before, .header::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(184,137,42,0.2);
-  }
-  .header::before { width: 260px; height: 260px; top: -100px; right: -60px; }
-  .header::after  { width: 140px; height: 140px; bottom: -60px; right: 120px; border-width: 2px; border-color: rgba(184,137,42,0.12); }
+/* BODY */
+.body { display: grid; grid-template-columns: 220px 1fr; }
 
-  .h-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: -0.5px;
-    line-height: 1;
-    position: relative;
-    z-index: 1;
-  }
-  .h-title {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
-    color: var(--gold-lt);
-    margin-top: 8px;
-    position: relative;
-    z-index: 1;
-  }
-  .h-tags {
-    font-size: 10px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.42);
-    margin-top: 9px;
-    letter-spacing: 0.3px;
-    position: relative;
-    z-index: 1;
-  }
-  .h-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-    position: relative;
-    z-index: 1;
-  }
-  .h-contact div {
-    font-size: 10.5px;
-    color: rgba(255,255,255,0.7);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .ico { color: var(--gold); font-size: 10px; width: 13px; text-align: center; }
+/* SIDEBAR */
+.sidebar { background: var(--stone); padding: 22px 18px; border-right: 1px solid var(--rule); }
+.s-block { margin-bottom: 18px; }
+.s-title { font-size: 8px; font-weight: 600; letter-spacing: 2.8px; text-transform: uppercase; color: var(--gold); padding-bottom: 5px; border-bottom: 1px solid var(--rule); margin-bottom: 9px; }
+.chips { display: flex; flex-wrap: wrap; gap: 3px; }
+.chip { font-size: 9px; color: var(--ink); background: var(--white); border: 1px solid var(--rule); padding: 2px 7px; border-radius: 2px; }
+.chip.dark { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.chip.accent { background: var(--gold-lt); color: var(--navy); border-color: var(--gold); font-weight: 500; }
+.chip.teal { background: #E6F4F5; color: var(--teal); border-color: #B2D8DC; font-weight: 500; }
 
-  .g-rule { height: 3px; background: linear-gradient(90deg, var(--gold), #E8C05A 55%, var(--gold)); }
+.edu { margin-bottom: 10px; }
+.edu-deg { font-size: 10px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+.edu-school { font-size: 9.5px; color: var(--muted); margin-top: 1px; }
+.edu-meta { font-size: 9px; color: var(--gold); font-weight: 500; margin-top: 1px; }
 
-  /* STATS */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--rule); }
-  .stat { padding: 13px 0; text-align: center; border-right: 1px solid var(--rule); }
-  .stat:last-child { border-right: none; }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1; }
-  .stat-label { font-size: 8.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+.cert { font-size: 9.5px; color: var(--ink); padding: 3.5px 0; border-bottom: 1px solid var(--rule); line-height: 1.35; display: flex; gap: 5px; }
+.cert:last-child { border-bottom: none; }
+.cert::before { content: '▸'; color: var(--teal); font-size: 9px; flex-shrink: 0; margin-top: 1px; }
+.cert-year { color: var(--muted); font-size: 8.5px; white-space: nowrap; }
+.cert-new { display: inline-block; font-size: 7.5px; font-weight: 600; background: var(--gold-lt); color: var(--gold); border: 1px solid var(--gold); border-radius: 2px; padding: 0 4px; margin-left: 3px; vertical-align: middle; letter-spacing: 0.5px; }
 
-  /* BODY */
-  .body { display: grid; grid-template-columns: 220px 1fr; }
+.award { font-size: 9.5px; font-weight: 500; color: var(--navy); padding: 4px 8px; background: var(--gold-lt); border-left: 3px solid var(--gold); margin-bottom: 4px; display: flex; align-items: center; gap: 5px; }
+.award::before { content: '★'; color: var(--gold); font-size: 9px; }
+.ace-award { font-size: 9.5px; font-weight: 500; color: var(--teal); padding: 4px 8px; background: #E6F4F5; border-left: 3px solid var(--teal); margin-bottom: 4px; display: flex; align-items: center; gap: 5px; line-height: 1.4; }
+.ace-award::before { content: '◆'; color: var(--teal); font-size: 9px; }
 
-  /* SIDEBAR */
-  .sidebar { background: var(--stone); padding: 22px 18px; border-right: 1px solid var(--rule); }
-  .s-block { margin-bottom: 18px; }
-  .s-title { font-size: 8px; font-weight: 600; letter-spacing: 2.8px; text-transform: uppercase; color: var(--gold); padding-bottom: 5px; border-bottom: 1px solid var(--rule); margin-bottom: 9px; }
+/* MAIN */
+.main { padding: 22px 28px 24px 22px; }
+.sec { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--navy); border-bottom: 1.5px solid var(--navy); padding-bottom: 4px; margin-bottom: 11px; margin-top: 17px; display: flex; align-items: center; gap: 7px; }
+.sec:first-child { margin-top: 0; }
+.pip { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
 
-  .chips { display: flex; flex-wrap: wrap; gap: 3px; }
-  .chip { font-size: 9px; color: var(--ink); background: var(--white); border: 1px solid var(--rule); padding: 2px 7px; border-radius: 2px; }
-  .chip.dark { background: var(--navy); color: var(--white); border-color: var(--navy); }
-  .chip.accent { background: var(--gold-lt); color: var(--navy); border-color: var(--gold); font-weight: 500; }
+.summary { font-size: 10.5px; line-height: 1.7; color: var(--ink); font-weight: 300; }
+.summary strong { font-weight: 600; color: var(--navy); }
 
-  .edu { margin-bottom: 10px; }
-  .edu-deg { font-size: 10px; font-weight: 600; color: var(--navy); line-height: 1.3; }
-  .edu-school { font-size: 9.5px; color: var(--muted); margin-top: 1px; }
-  .edu-meta { font-size: 9px; color: var(--gold); font-weight: 500; margin-top: 1px; }
+.exp { margin-bottom: 12px; }
+.exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.exp-role { font-size: 11px; font-weight: 600; color: var(--navy); line-height: 1.25; }
+.exp-period { font-size: 9px; font-weight: 600; color: var(--gold); background: var(--gold-lt); padding: 2px 8px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+.exp-co { font-size: 10px; color: var(--muted); font-style: italic; margin: 2px 0 5px; }
+.exp-ul { list-style: none; }
+.exp-ul li { font-size: 10px; line-height: 1.55; color: var(--ink); font-weight: 300; padding: 1.5px 0 1.5px 14px; position: relative; }
+.exp-ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal); font-weight: 600; font-size: 9px; top: 2px; }
+.promoted { font-weight: 400; color: var(--muted); font-size: 10px; }
 
-  .cert { font-size: 9.5px; color: var(--ink); padding: 3.5px 0; border-bottom: 1px solid var(--rule); line-height: 1.35; display: flex; gap: 5px; }
-  .cert:last-child { border-bottom: none; }
-  .cert::before { content: '▸'; color: var(--teal); font-size: 9px; flex-shrink: 0; margin-top: 1px; }
+.ptable { width: 100%; border-collapse: collapse; font-size: 9.5px; margin-top: 4px; }
+.ptable th { background: var(--navy); color: var(--white); padding: 5px 8px; text-align: left; font-weight: 500; font-size: 9px; letter-spacing: 0.5px; }
+.ptable td { padding: 4px 8px; border-bottom: 1px solid var(--rule); color: var(--ink); line-height: 1.4; vertical-align: top; }
+.ptable tr:nth-child(even) td { background: var(--stone); }
+.ptable td:last-child { color: var(--muted); white-space: nowrap; }
+.ptable td:first-child { font-weight: 600; color: var(--navy); }
 
-  .award { font-size: 9.5px; font-weight: 500; color: var(--navy); padding: 4px 8px; background: var(--gold-lt); border-left: 3px solid var(--gold); margin-bottom: 4px; display: flex; align-items: center; gap: 5px; }
-  .award::before { content: '★'; color: var(--gold); font-size: 9px; }
+.activities { margin: 0; padding: 0; list-style: none; }
+.activities li { font-size: 10px; line-height: 1.6; color: var(--ink); font-weight: 300; padding: 2px 0 2px 14px; position: relative; }
+.activities li::before { content: '—'; position: absolute; left: 0; color: var(--teal); font-weight: 600; font-size: 9px; top: 3px; }
+.activities a { color: var(--teal); text-decoration: none; }
 
-  /* MAIN */
-  .main { padding: 22px 28px 24px 22px; }
-
-  .sec { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--navy); border-bottom: 1.5px solid var(--navy); padding-bottom: 4px; margin-bottom: 11px; margin-top: 17px; display: flex; align-items: center; gap: 7px; }
-  .sec:first-child { margin-top: 0; }
-  .pip { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
-
-  .summary { font-size: 10.5px; line-height: 1.7; color: var(--ink); font-weight: 300; }
-  .summary strong { font-weight: 600; color: var(--navy); }
-
-  .exp { margin-bottom: 12px; }
-  .exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-  .exp-role { font-size: 11px; font-weight: 600; color: var(--navy); line-height: 1.25; }
-  .exp-period { font-size: 9px; font-weight: 600; color: var(--gold); background: var(--gold-lt); padding: 2px 8px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
-  .exp-co { font-size: 10px; color: var(--muted); font-style: italic; margin: 2px 0 5px; }
-  .exp-ul { list-style: none; }
-  .exp-ul li { font-size: 10px; line-height: 1.55; color: var(--ink); font-weight: 300; padding: 1.5px 0 1.5px 14px; position: relative; }
-  .exp-ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal); font-weight: 600; font-size: 9px; top: 2px; }
-
-  .promoted { font-weight: 400; color: var(--muted); font-size: 10px; }
-
-  .ptable { width: 100%; border-collapse: collapse; font-size: 9.5px; margin-top: 4px; }
-  .ptable th { background: var(--navy); color: var(--white); padding: 5px 8px; text-align: left; font-weight: 500; font-size: 9px; letter-spacing: 0.5px; }
-  .ptable td { padding: 4px 8px; border-bottom: 1px solid var(--rule); color: var(--ink); line-height: 1.4; vertical-align: top; }
-  .ptable tr:nth-child(even) td { background: var(--stone); }
-  .ptable td:last-child { color: var(--muted); white-space: nowrap; }
-  .ptable td:first-child { font-weight: 600; color: var(--navy); }
-
-  @media print { body { background: white; padding: 0; } .page { box-shadow: none; } }
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; }
+}
 </style>
 </head>
 <body>
@@ -178,19 +179,18 @@
   <!-- HEADER -->
   <div class="header">
     <div>
-      <div class="h-name">Iwan Herdian</div>
+      <div class="h-name">Iwan Herdian <span class="h-ace-badge">◆ Oracle ACE Associate</span></div>
       <div class="h-title">Application Development Manager &nbsp;·&nbsp; Oracle ERP Specialist</div>
-      <div class="h-tags">Oracle EBS &nbsp;·&nbsp; Oracle Fusion Cloud &nbsp;·&nbsp; Oracle APEX &nbsp;·&nbsp; Node.js &nbsp;·&nbsp; AWS &nbsp;·&nbsp; 18 Years Experience</div>
+      <div class="h-tags">Oracle EBS &nbsp;·&nbsp; Oracle Fusion Cloud &nbsp;·&nbsp; Oracle APEX &nbsp;·&nbsp; Node.js &nbsp;·&nbsp; AWS &nbsp;·&nbsp; Agentic AI &nbsp;·&nbsp; 18+ Years Experience</div>
     </div>
     <div class="h-contact">
-      <div><span class="ico">✉</span> iwan[dot]herdian86[at]gmail[dot]com</div>
+      <div><span class="ico">✉</span> iwan.herdian86@gmail.com</div>
       <div><span class="ico">☎</span> +62 813-1661-0206</div>
-      <div><span class="ico">⚲</span> Jakarta, Indonesia</div>
+      <div><span class="ico">⚲</span> Kudus, Jawa Tengah, Indonesia</div>
       <div><span class="ico">in</span> linkedin.com/in/iwanherdian</div>
-      <div><span class="ico">⏳</span> Notice Period: 2 Months</div>
+      <div class="notice"><div><span class="ico">⏳</span> Notice Period: 2 Months</div></div>
     </div>
   </div>
-
   <div class="g-rule"></div>
 
   <!-- STATS -->
@@ -200,7 +200,7 @@
       <div class="stat-label">Years Experience</div>
     </div>
     <div class="stat">
-      <div class="stat-num">40+</div>
+      <div class="stat-num">52+</div>
       <div class="stat-label">Projects Delivered</div>
     </div>
     <div class="stat">
@@ -224,6 +224,7 @@
           <span class="chip">AP · AR · GL · FA · CM</span>
           <span class="chip">PO · OPM · AGIS</span>
           <span class="chip">Project Costing</span>
+          <span class="chip">iProcurement · INV · OM</span>
         </div>
       </div>
 
@@ -231,11 +232,14 @@
         <div class="s-title">Technical Skills</div>
         <div class="chips">
           <span class="chip accent">SQL / PL/SQL</span>
+          <span class="chip accent">Oracle ORDS</span>
           <span class="chip accent">Node.js</span>
           <span class="chip">FastAPI</span>
+          <span class="chip">RESTful API</span>
           <span class="chip">Data Analysis</span>
           <span class="chip">AWS</span>
-          <span class="chip">RESTful API</span>
+          <span class="chip">Git / GitHub</span>
+          <span class="chip">CI/CD</span>
           <span class="chip">SDLC</span>
           <span class="chip">Agile / Waterfall</span>
           <span class="chip">TOAD / SOAP UI</span>
@@ -243,13 +247,26 @@
       </div>
 
       <div class="s-block">
+        <div class="s-title">AI &amp; Cloud</div>
+        <div class="chips">
+          <span class="chip teal">Agentic AI</span>
+          <span class="chip teal">Oracle OCI</span>
+          <span class="chip teal">AWS</span>
+          <span class="chip">Claude / Anthropic</span>
+          <span class="chip">Cloudflare Tunnel</span>
+        </div>
+      </div>
+
+      <div class="s-block">
         <div class="s-title">Leadership</div>
         <div class="chips">
           <span class="chip">Project Management</span>
-          <span class="chip">Team Lead (10 pax)</span>
+          <span class="chip">Team Lead (12 pax)</span>
           <span class="chip">Vendor Management</span>
           <span class="chip">Managed Service</span>
           <span class="chip">Stakeholder Mgmt</span>
+          <span class="chip">Change Management</span>
+          <span class="chip">SLA Management</span>
         </div>
       </div>
 
@@ -269,10 +286,13 @@
 
       <div class="s-block">
         <div class="s-title">Certifications</div>
+        <div class="cert">Oracle ACE Associate — Oracle APEX &amp; ERP Cloud <span class="cert-new">2026</span></div>
+        <div class="cert">Oracle Agentic AI Certified Foundations Associate <span class="cert-new">2026</span></div>
+        <div class="cert">Oracle Cloud Infrastructure AI Foundations Associate <span class="cert-new">2026</span></div>
+        <div class="cert">Claude Code in Action — Anthropic <span class="cert-new">2026</span></div>
         <div class="cert">Oracle APEX Cloud Certified Developer Professional</div>
         <div class="cert">Oracle Cloud Support Specialist</div>
         <div class="cert">Oracle Fusion Cloud ERP Certified Foundations Associate</div>
-        <div class="cert">Oracle Cloud Infrastructure 2023 AI Foundations Associate</div>
         <div class="cert">Oracle Financial Cloud: Payables 2022 Implementation Specialist</div>
         <div class="cert">Oracle Financial Cloud: Receivables 2020 Implementation Specialist</div>
         <div class="cert">Oracle Financial Cloud: GL 2017 Implementation Specialist</div>
@@ -280,7 +300,8 @@
       </div>
 
       <div class="s-block">
-        <div class="s-title">Awards</div>
+        <div class="s-title">Awards &amp; Recognition</div>
+        <div class="ace-award">Oracle ACE Associate — Oracle Community Recognition, Jun 2026 – May 2027</div>
         <div class="award">Star of Excellent Award 2021</div>
         <div class="award">Star of Excellent Award 2020</div>
         <div class="award">Star of Excellent Award 2018</div>
@@ -295,7 +316,7 @@
     <div class="main">
 
       <div class="sec"><span class="pip"></span>Professional Summary</div>
-      <p class="summary">Results-driven Application Development Manager with <strong>18+ years</strong> of hands-on experience in Oracle E-Business Suite (EBS), Oracle ERP Cloud (Fusion), and Oracle APEX. Currently leading a <strong>10-person development team</strong> at Karya Cipta Solusi Internasional. Previously held dual roles at PT Nojorono Tobacco International — delivering enterprise web applications on Oracle APEX, managing AWS cloud infrastructure, and acting as Co-PM for Oracle ERP implementations. Recognized with <strong>6 consecutive Star of Excellent Awards (2015–2021)</strong>.</p>
+      <p class="summary">Results-driven <strong>Application Development Manager</strong> and <strong>Oracle ACE Associate</strong> with 18+ years of progressive experience in Oracle E-Business Suite (EBS) R12, Oracle ERP Cloud (Fusion), and Oracle APEX application development. Currently leading a <strong>12-person IT Upstream Development team (Tim PANDAWA)</strong> at Karya Cipta Solusi Internasional, a shared service center under Nojorono Group. Delivered 52+ enterprise ERP implementation, roll-out, and integration projects across manufacturing, logistics, pharmaceutical, tobacco, energy, and government sectors. Expertise spans Oracle Financials, Procurement, APEX, PL/SQL, RESTful API, Agentic AI, and AWS. Recognized with <strong>6 consecutive Star of Excellent Awards (2015–2021)</strong> and multiple Oracle certifications in 2026 including OCI AI Foundations, Agentic AI, and Oracle ACE Associate.</p>
 
       <div class="sec"><span class="pip"></span>Work Experience</div>
 
@@ -304,12 +325,12 @@
           <div class="exp-role">Application Development Manager (Upstream)</div>
           <div class="exp-period">Jan 2025 – Present</div>
         </div>
-        <div class="exp-co">Karya Cipta Solusi Internasional</div>
+        <div class="exp-co">Karya Cipta Solusi Internasional (KCSI) — Nojorono Group &nbsp;·&nbsp; Kudus, Jawa Tengah</div>
         <ul class="exp-ul">
-          <li>Lead a 10-person team: 1 Asst. Manager, 2 System Analysts, 4 Back-End, 2 Front-End, and 1 Mobile Developer</li>
-          <li>Oversee full SDLC — planning, design, implementation, testing, and post-release maintenance across enterprise applications</li>
-          <li>Drive architecture decisions, approve technical designs, define coding standards, and manage external vendor/ERP/cloud partner relationships</li>
-          <li>Define system performance metrics and SLA standards; recommend technology investments to Head of IT</li>
+          <li>Lead and manage a 12-person IT Upstream Development team (Tim PANDAWA) responsible for Oracle APEX applications and Oracle EBS customizations across 6 subsidiaries: NTI, NSTI, NCT, ATI, KDK, and GLT</li>
+          <li>Oversee full SDLC — requirements gathering, system design, development, UAT, deployment, and post-release maintenance ensuring all applications meet business requirements and SLA standards</li>
+          <li>Drive technical architecture decisions for Oracle APEX, ORDS, Oracle EBS 12.2, PL/SQL, and Cloudflare Tunnel; establish coding standards and best practices across the team</li>
+          <li>Analyze emerging technology trends including Agentic AI capabilities and recommend new application initiatives to support digital transformation; present investment recommendations to Head of IT</li>
         </ul>
       </div>
 
@@ -318,37 +339,39 @@
           <div class="exp-role">Application Development Manager &nbsp;<span class="promoted">↑ promoted from IT MIS Section Head</span></div>
           <div class="exp-period">Mar 2023 – Dec 2024</div>
         </div>
-        <div class="exp-co">PT Nojorono Tobacco International</div>
+        <div class="exp-co">PT Nojorono Tobacco International &nbsp;·&nbsp; Jakarta, Indonesia</div>
         <ul class="exp-ul">
-          <li>Led 6-person team; delivered PRISMA, EAM, PRITHADEVI &amp; Marketing System on Oracle APEX integrated with Oracle EBS</li>
-          <li>Implemented Internet Banking integration for Oracle EBS (AP/GL) across 5 entities in the Nojorono Group</li>
-          <li>Co-PM for Oracle EBS implementation across 3 supporting companies; developed PERMADI project management system on APEX</li>
-          <li>Functional support across Oracle EBS modules: AP, AR, GL, CM, FA, PO, Project Costing, OPM</li>
+          <li>Led 6-person development team delivering PRISMA, EAM, PRITHADEVI, and Marketing System on Oracle APEX integrated with Oracle EBS R12</li>
+          <li>Implemented Internet Banking integration for Oracle EBS (AP/GL modules) across 5 entities in Nojorono Group, reducing manual reconciliation time significantly</li>
+          <li>Appointed Co-Project Manager for Oracle EBS implementation across 3 supporting companies; developed PERMADI project management system on Oracle APEX</li>
+          <li>Functional consulting support across Oracle EBS modules: AP, AR, GL, CM, FA, PO, Project Costing, OPM</li>
         </ul>
       </div>
 
       <div class="exp">
         <div class="exp-top">
-          <div class="exp-role">Functional Consultant — Support Team Lead</div>
+          <div class="exp-role">Senior Functional Consultant &amp; Support Team Lead</div>
           <div class="exp-period">Aug 2014 – Mar 2023</div>
         </div>
-        <div class="exp-co">PT Optima Data Internasional (Equine Technologies Group) &nbsp;·&nbsp; Oracle Gold Partner</div>
+        <div class="exp-co">PT Optima Data Internasional (Equine Technologies Group) &nbsp;·&nbsp; Oracle Gold Partner &nbsp;·&nbsp; Jakarta</div>
         <ul class="exp-ul">
-          <li>Led managed service for Oracle EBS financial modules across 10+ concurrent clients; acted as PM for roll-out and integration projects</li>
-          <li>Key clients: PT Nutrifood Indonesia, Puninar Logistic Group, PT Perusahaan Pengelola Aset, PT Go Online Destination</li>
-          <li>Earned 6 consecutive Star of Excellent Awards (2015–2021) for consistent top performance</li>
+          <li>Led managed service for Oracle EBS financial modules (AP, AR, GL, FA, CM) and procurement modules (PO, iProcurement) across 10+ concurrent enterprise clients</li>
+          <li>Served as Project Manager and Lead Functional Consultant for Oracle EBS roll-out, enhancement, upgrade, and integration projects across multiple industries</li>
+          <li>Key clients: PT Nutrifood Indonesia, Puninar Logistic Group, PT Perusahaan Pengelola Aset, Nojorono Tobacco International, PT Bintan Lagoon Resort, PT Go Online Destination</li>
+          <li>Consecutively awarded Star of Excellent Award for 6 years (2015–2021) for outstanding performance and client satisfaction</li>
         </ul>
       </div>
 
       <div class="exp">
         <div class="exp-top">
-          <div class="exp-role">Functional Consultant</div>
+          <div class="exp-role">Oracle EBS Functional Consultant</div>
           <div class="exp-period">Nov 2008 – Aug 2014</div>
         </div>
-        <div class="exp-co">PT Mitra Integrasi Informatika (Metrodata Group)</div>
+        <div class="exp-co">PT Mitra Integrasi Informatika (Metrodata Group) &nbsp;·&nbsp; Jakarta, Indonesia</div>
         <ul class="exp-ul">
-          <li>Progressed from Analyst → Associate → Consultant; completed 2 full Oracle EBS implementation cycles (financial modules)</li>
-          <li>Key clients: PT Pratapa Nirmala, PT Autocomp System Indonesia (Yazaki), Perum Peruri, PT Gagas Energi Indonesia</li>
+          <li>Progressed from Business Trainee → Junior Analyst → Associate Consultant → Functional Consultant within 6 years</li>
+          <li>Completed 2 full Oracle EBS implementation lifecycle projects covering AP, AR, GL, FA, and CM modules using Oracle AIM methodology</li>
+          <li>Key clients: PT Pratapa Nirmala (Kalbe Group), PT Autocomp System Indonesia (Yazaki Group), Perum Peruri, PT Gagas Energi Indonesia (PGN), PT Indonesia Power</li>
         </ul>
       </div>
 
@@ -363,12 +386,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Karya Cipta Solusi Int'l</td><td>Oracle ERP Consulting &amp; App Development Leadership</td><td>App Dev Manager</td><td>2025–Now</td></tr>
-          <tr><td>PT Nojorono Tobacco Int'l</td><td>Internet Banking Integration (Oracle EBS AP/GL) — 5 entities</td><td>Functional Consultant</td><td>Jan–Apr 2024</td></tr>
-          <tr><td>PT Nojorono Tobacco Int'l</td><td>PRISMA, EAM, PRITHADEVI &amp; Marketing System (APEX)</td><td>Team Lead</td><td>Dec 2023–Dec 2024</td></tr>
-          <tr><td>PT Nojorono Tobacco Int'l</td><td>PERMADI — Project Mgmt Dynamic Integration (APEX)</td><td>Dev &amp; System Analyst</td><td>Jun–Sep 2023</td></tr>
-          <tr><td>PT Nutri Niaga Perkasa</td><td>Oracle EBS Roll-Out (AP, AR, GL, CM)</td><td>PM &amp; Functional Consultant</td><td>Nov–Dec 2022</td></tr>
+          <tr><td>KCSI / Nojorono Group</td><td>Oracle ERP Consulting &amp; Oracle APEX App Development across 6 subsidiaries</td><td>App Dev Manager</td><td>Jan 2025–Now</td></tr>
+          <tr><td>PT Nojorono Tobacco Int'l</td><td>Internet Banking Integration for Oracle EBS AP/GL — 5 group entities</td><td>Functional Consultant</td><td>Jan–Apr 2024</td></tr>
+          <tr><td>PT Nojorono Tobacco Int'l</td><td>PRISMA, EAM, PRITHADEVI &amp; Marketing System (Oracle APEX + EBS)</td><td>Team Lead</td><td>Dec 2023–Dec 2024</td></tr>
+          <tr><td>PT Nojorono Tobacco Int'l</td><td>PERMADI — Project Management Dynamic Integration (Oracle APEX)</td><td>Dev &amp; System Analyst</td><td>Jun–Sep 2023</td></tr>
+          <tr><td>PT Nutri Niaga Perkasa</td><td>Oracle EBS Roll-Out — AP, AR, GL, CM modules</td><td>PM &amp; Functional Consultant</td><td>Nov–Dec 2022</td></tr>
           <tr><td>PT Perusahaan Pengelola Aset</td><td>eProcurement Integration to Oracle EBS</td><td>PM &amp; Functional Consultant</td><td>Jan–May 2022</td></tr>
-          <tr><td>PT Nutrifood Indonesia</td><td>Oracle EBS Managed Service</td><td>Maintenance Team Lead</td><td>2018–2023</td></tr>
-          <tr><td>Puninar Logistic Group</td><td>Oracle ERP Cloud Managed Service</td><td>Team Lead &amp; Functional</td><td>2017–2023</td></tr>
-          <tr><td>PT Signa Husada</td><td>Roll-Out New Operating Unit (OM, AR, PO, AP, INV, GL)</td><td>PM &amp; G
+          <tr><td>PT Nutrifood Indonesia</td><td>Oracle EBS Financial Managed Service</td><td>Maintenance Team Lead</td><td>2018–2023</td></tr>
+          <tr><td>Puninar Logistic Group</td><td>Oracle ERP Cloud (Fusion) Managed Service &amp; Enhancement</td><td>Team Lead &amp; Functional</td><td>2017–2023</td></tr>
+          <tr><td>PT Signa Husada</td><td>Oracle EBS Roll-Out New Operating Unit — OM, AR, PO, AP, INV, GL &amp; Budget</td><td>PM &amp; GL/Budget Consultant</td><td>Oct 2019–Feb 2020</td></tr>
+          <tr><td>PT Perusahaan Pengelola Aset</td><td>Core System Integration to Oracle AR &amp; GL</td><td>PM &amp; Solution Architect</td><td>Aug–Sep 2019</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:9px;color:var(--muted);margin-top:5px;font-style:italic;">See complete project history: 52 projects spanning 2008–2025 across manufacturing, logistics, pharmaceutical, tobacco, energy, government, and hospitality sectors.</p>
+
+      <div class="sec"><span class="pip"></span>Professional Activities</div>
+      <ul class="activities">
+        <li>Technical writer — publishes Oracle APEX and Oracle EBS articles in Bahasa Indonesia on Medium (<a href="https://medium.com/@iwan.herdian" target="_blank">medium.com/@iwan.herdian</a>) to support the Indonesian Oracle developer community</li>
+        <li>Maintainer of PANDAWA GitHub repository (<a href="https://github.com/iwanhe/pandawa" target="_blank">github.com/iwanhe/pandawa</a>) — Oracle APEX and EBS development standards, coding conventions, and deployment tooling for Tim PANDAWA</li>
+        <li>Active contributor to Oracle ACE Program through product advocacy, technical content creation, and community engagement; recognized as Oracle ACE Associate (Jun 2026 – May 2027)</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
